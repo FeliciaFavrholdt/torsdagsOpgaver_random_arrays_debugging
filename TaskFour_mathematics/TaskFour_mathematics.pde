@@ -10,10 +10,8 @@ Start the function by calling it from setup with the input (1, 1). (hint: fibuna
 */ 
 
 void setup() {
-//4.b - added array
+//4.b - added array + show output of array
 int[] arr = {1, 1, 1, 2, 2, 3, 3, 3, 4, 5, 5, 5, 6, 6, 7, 8, 8, 9, 9, 10};  
-
-//4.b - show output of array
 printArray(arr);
 
 //4.a - Added a few examples below: 
@@ -98,18 +96,18 @@ void twoIntAsParameter(int z, int v) {
 }
 
 //Calculates the fibunacci sequence by calling itsself 
-void FibunacciSequence(int first, int second) { 
-  int last = 13; 
-  print("\n" + "\nFibunacci sequence output: " + first + ", ");
-  //int end is set to 13 to show output from source: https://i.pinimg.com/236x/98/82/d5/9882d569f7e0b5665fe3b2edd5069b06.jpg 
-  //should be changed to int = 10000 for the assignment output, but not unrealistic to check on the terminal. 
+void FibunacciSequence(int a, int b) { 
+  int d = 13; 
+  print("\n" + "\nFibunacci sequence output: " + a + ", ");
+  //int d is set to 13 to show output from source: https://i.pinimg.com/236x/98/82/d5/9882d569f7e0b5665fe3b2edd5069b06.jpg 
+  //int d = 13 should be changed to int d = 10000 for the assignment output but unrealistic for me to check on the terminal. 
   
-  for (int i = 0; i <= last; i++) {
-    print(second + ", ");
+  for (int i = 0; i <= d; i++) {
+    print(b + ", ");
     
     //compute the next output
-    int next = first + second;
-    first = second;  
-    second = next; 
+    int c = a + b;
+    a = b;  
+    b = c; 
   }
 }
