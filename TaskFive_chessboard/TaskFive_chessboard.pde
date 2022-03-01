@@ -8,33 +8,35 @@ What has been left out, is how to assign the alternating value of 0's and 1's.
 5.e Before drawing the rect in the previous step, add a fill() statement, that fills with the value of 0 if the board[x][y] == 0.
 */
 
-
-int[][] board = new int[8][8]; //5.a 
+int first = 8; 
+int second = 8; 
+int[][] board = new int[first][second]; //5.a 
 int sideLength = 40;
 
 void setup() {
   size(350, 350); //5.b
   
   //5.c
-  for (int x = 0; x < board.length; x++) {
-    for (int y = 0; y < board.length; y++) {
-      board[x][y] = 0;
+  for (int i = 0; i < board.length; i++) {
+    for (int j = 0; j < board.length; j++) {
+      board[i][j] = 0;
     }
   }
 }
   
 void draw() {
+  rectMode(CORNER);
   background(0);
   
   //5.d 
-  for (int x = 0; x < board.length; x++) {
-    for (int y = 0; y < board.length; y++) {
-      if ((x + y) % 2 == 0) {
+  for (int i = 0; i <= board.length; i++) {
+    for (int j = 0; j <= board.length; j++) {
+      if ((i + j) % 2 == 0) {
         fill(0);  // 5.e
-        rect(x * sideLength, y * sideLength, sideLength, sideLength);
+        rect(i * sideLength, j * sideLength, sideLength, sideLength);
       } else {
-        fill(#8B6A35); 
-        rect(x * sideLength, y * sideLength, sideLength, sideLength);
+        fill(#D076E5); //adds purple color
+        rect(i * sideLength, j * sideLength, sideLength, sideLength);
       }
     }
   }
